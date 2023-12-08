@@ -1,0 +1,13 @@
+---
+- name: Play automatizador de windows
+  hosts: windows.automation.here
+  gather_facts: True
+  tasks:
+    - name: Atualiza o windows
+      ansible.windows.win_updates:
+        category_names: '*'
+        reboot: true
+
+    - name: Executa o script
+      ansible.windows.win_shell: "C:\script.ps1"
+
