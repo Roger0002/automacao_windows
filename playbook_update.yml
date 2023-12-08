@@ -9,5 +9,5 @@
         reboot: true
 
     - name: Executa o script
-      ansible.windows.win_shell: "C:\script.ps1"
+      ansible.windows.win_shell: C:\script.ps1
 
