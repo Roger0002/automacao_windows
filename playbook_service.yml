@@ -1,15 +1,30 @@
 ---
 - name: Play de serviços de windows
   hosts: windows.automation.here
-  gather_facts: True
+  gather_facts: False
+  vars:
+    instrucao: "Inicia"
+    servico: "Themes"
+
   tasks:
-    - name: Pega o status
+    - name: Pega o status do serviço {{ servico }}
       ansible.windows.win_service_info:
-        name: Themes
+        name: "{{ servico }}"
       register: serv_status
 
-    - name: exibe
+    - name: Mostra o status do serviço {{ servico }}
       ansible.builtin.debug:
-        var: serv_status
+        msg: "O Status do serviço é: {{ serv_status.services[0].state }}"
+          
+    - name: Inicia o serviço {{ servico }}
+      ansible.windows.win_service:
+        name: "{{ servico }}"
+        state: started
+      when: instrucao == "Inicia"
 
-
+    - name: Para o serviço {{ servico }}
+      ansible.windows.win_service:
+        name: "{{ servico }}"
+        state: stopped
+      when: instrucao == "Para"
+...
