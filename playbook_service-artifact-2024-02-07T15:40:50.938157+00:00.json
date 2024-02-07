@@ -1,0 +1,385 @@
+{
+    "plays": [
+        {
+            "__play_name": "Play de serviços de windows",
+            "name": "Play de serviços de windows",
+            "pattern": "windows.automation.here",
+            "play": "Play de serviços de windows",
+            "play_pattern": "windows.automation.here",
+            "play_uuid": "d699a405-e843-928c-8c73-000000000002",
+            "playbook": "/root/automação_windows/playbook_service.yml",
+            "playbook_uuid": "6340a5b7-cf91-4e7f-88e2-40435d70442f",
+            "tasks": [
+                {
+                    "__changed": false,
+                    "__duration": "1s",
+                    "__host": "windows.automation.here",
+                    "__number": 0,
+                    "__result": "Ok",
+                    "__task": "Pega o status do serviço UALSVC",
+                    "__task_action": "ansible.windows.win_service_info",
+                    "duration": 1.483803,
+                    "end": "2024-02-07T15:40:48.760285",
+                    "event_loop": null,
+                    "host": "windows.automation.here",
+                    "play": "Play de serviços de windows",
+                    "play_pattern": "windows.automation.here",
+                    "play_uuid": "d699a405-e843-928c-8c73-000000000002",
+                    "playbook": "/root/automação_windows/playbook_service.yml",
+                    "playbook_uuid": "6340a5b7-cf91-4e7f-88e2-40435d70442f",
+                    "remote_addr": "windows.automation.here",
+                    "res": {
+                        "_ansible_no_log": null,
+                        "changed": false,
+                        "exists": true,
+                        "invocation": {
+                            "module_args": {
+                                "name": "UALSVC"
+                            }
+                        },
+                        "services": [
+                            {
+                                "checkpoint": 0,
+                                "controls_accepted": [
+                                    "stop",
+                                    "pre_shutdown"
+                                ],
+                                "dependencies": [
+                                    "WinMgmt"
+                                ],
+                                "dependency_of": [],
+                                "description": "This service logs unique client access requests, in the form of IP addresses and user names, of installed products and roles on the local server. This information can be queried, via Powershell, by administrators needing to quantify client demand of server software for offline Client Access License (CAL) management. If the service is disabled, client requests will not be logged and will not be retrievable via Powershell queries. Stopping the service will not affect query of historical data (see supporting documentation for steps to delete historical data). The local system administrator must consult his, or her, Windows Server license terms to determine the number of CALs that are required for the server software to be appropriately licensed; use of the UAL service and data does not alter this obligation.",
+                                "desktop_interact": false,
+                                "display_name": "User Access Logging Service",
+                                "error_control": "normal",
+                                "failure_actions": [],
+                                "failure_actions_on_non_crash_failure": false,
+                                "failure_command": null,
+                                "failure_reboot_msg": null,
+                                "failure_reset_period_sec": 0,
+                                "launch_protection": "none",
+                                "load_order_group": "",
+                                "name": "UALSVC",
+                                "path": "C:\\Windows\\system32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+                                "pre_shutdown_timeout_ms": 10000,
+                                "preferred_node": null,
+                                "process_id": 388,
+                                "required_privileges": [],
+                                "service_exit_code": 0,
+                                "service_flags": [],
+                                "service_type": "win32_share_process",
+                                "sid_info": "unrestricted",
+                                "start_mode": "delayed",
+                                "state": "started",
+                                "triggers": [],
+                                "username": "NT AUTHORITY\\SYSTEM",
+                                "wait_hint_ms": 0,
+                                "win32_exit_code": 0
+                            }
+                        ]
+                    },
+                    "resolved_action": "ansible.windows.win_service_info",
+                    "start": "2024-02-07T15:40:47.276482",
+                    "task": "Pega o status do serviço UALSVC",
+                    "task_action": "ansible.windows.win_service_info",
+                    "task_args": "",
+                    "task_path": "/root/automação_windows/playbook_service.yml:10",
+                    "task_uuid": "d699a405-e843-928c-8c73-000000000004",
+                    "uuid": "cd08a4fc-508f-4581-a37a-e89eed2025a2"
+                },
+                {
+                    "__changed": false,
+                    "__duration": "0s",
+                    "__host": "windows.automation.here",
+                    "__number": 1,
+                    "__result": "Ok",
+                    "__task": "Mostra o status do serviço UALSVC",
+                    "__task_action": "ansible.builtin.debug",
+                    "duration": 0.009432,
+                    "end": "2024-02-07T15:40:48.773571",
+                    "event_loop": null,
+                    "host": "windows.automation.here",
+                    "play": "Play de serviços de windows",
+                    "play_pattern": "windows.automation.here",
+                    "play_uuid": "d699a405-e843-928c-8c73-000000000002",
+                    "playbook": "/root/automação_windows/playbook_service.yml",
+                    "playbook_uuid": "6340a5b7-cf91-4e7f-88e2-40435d70442f",
+                    "remote_addr": "windows.automation.here",
+                    "res": {
+                        "_ansible_no_log": null,
+                        "_ansible_verbose_always": true,
+                        "changed": false,
+                        "msg": "O Status do serviço é: started"
+                    },
+                    "resolved_action": "ansible.builtin.debug",
+                    "start": "2024-02-07T15:40:48.764139",
+                    "task": "Mostra o status do serviço UALSVC",
+                    "task_action": "ansible.builtin.debug",
+                    "task_args": "",
+                    "task_path": "/root/automação_windows/playbook_service.yml:15",
+                    "task_uuid": "d699a405-e843-928c-8c73-000000000005",
+                    "uuid": "03f5fdcf-19c3-4fa2-8835-0d80f7398aed"
+                },
+                {
+                    "__changed": false,
+                    "__duration": "2s",
+                    "__host": "windows.automation.here",
+                    "__number": 2,
+                    "__result": "Ok",
+                    "__task": "Inicia o serviço UALSVC",
+                    "__task_action": "ansible.windows.win_service",
+                    "duration": 1.744862,
+                    "end": "2024-02-07T15:40:50.522407",
+                    "event_loop": null,
+                    "host": "windows.automation.here",
+                    "play": "Play de serviços de windows",
+                    "play_pattern": "windows.automation.here",
+                    "play_uuid": "d699a405-e843-928c-8c73-000000000002",
+                    "playbook": "/root/automação_windows/playbook_service.yml",
+                    "playbook_uuid": "6340a5b7-cf91-4e7f-88e2-40435d70442f",
+                    "remote_addr": "windows.automation.here",
+                    "res": {
+                        "_ansible_no_log": null,
+                        "can_pause_and_continue": false,
+                        "changed": false,
+                        "depended_by": [],
+                        "dependencies": [
+                            "WinMgmt"
+                        ],
+                        "description": "This service logs unique client access requests, in the form of IP addresses and user names, of installed products and roles on the local server. This information can be queried, via Powershell, by administrators needing to quantify client demand of server software for offline Client Access License (CAL) management. If the service is disabled, client requests will not be logged and will not be retrievable via Powershell queries. Stopping the service will not affect query of historical data (see supporting documentation for steps to delete historical data). The local system administrator must consult his, or her, Windows Server license terms to determine the number of CALs that are required for the server software to be appropriately licensed; use of the UAL service and data does not alter this obligation.",
+                        "desktop_interact": false,
+                        "display_name": "User Access Logging Service",
+                        "exists": true,
+                        "invocation": {
+                            "module_args": {
+                                "dependencies": null,
+                                "dependency_action": "set",
+                                "description": null,
+                                "desktop_interact": false,
+                                "display_name": null,
+                                "error_control": null,
+                                "failure_actions": null,
+                                "failure_actions_on_non_crash_failure": null,
+                                "failure_command": null,
+                                "failure_reboot_msg": null,
+                                "failure_reset_period_sec": null,
+                                "force_dependent_services": false,
+                                "load_order_group": null,
+                                "name": "UALSVC",
+                                "password": null,
+                                "path": null,
+                                "pre_shutdown_timeout_ms": null,
+                                "required_privileges": null,
+                                "service_type": null,
+                                "sid_info": null,
+                                "start_mode": null,
+                                "state": "started",
+                                "update_password": null,
+                                "username": null
+                            }
+                        },
+                        "name": "UALSVC",
+                        "path": "C:\\Windows\\system32\\svchost.exe -k LocalSystemNetworkRestricted -p",
+                        "start_mode": "delayed",
+                        "state": "running",
+                        "username": "LocalSystem"
+                    },
+                    "resolved_action": "ansible.windows.win_service",
+                    "start": "2024-02-07T15:40:48.777545",
+                    "task": "Inicia o serviço UALSVC",
+                    "task_action": "ansible.windows.win_service",
+                    "task_args": "",
+                    "task_path": "/root/automação_windows/playbook_service.yml:19",
+                    "task_uuid": "d699a405-e843-928c-8c73-000000000006",
+                    "uuid": "4a43b7a8-7b84-4ec1-bd64-5ec6ad0cbedd"
+                },
+                {
+                    "__changed": false,
+                    "__duration": "0s",
+                    "__host": "windows.automation.here",
+                    "__number": 3,
+                    "__result": "Skipped",
+                    "__task": "Para o serviço UALSVC",
+                    "__task_action": "ansible.windows.win_service",
+                    "duration": 0.007768,
+                    "end": "2024-02-07T15:40:50.534244",
+                    "event_loop": null,
+                    "host": "windows.automation.here",
+                    "play": "Play de serviços de windows",
+                    "play_pattern": "windows.automation.here",
+                    "play_uuid": "d699a405-e843-928c-8c73-000000000002",
+                    "playbook": "/root/automação_windows/playbook_service.yml",
+                    "playbook_uuid": "6340a5b7-cf91-4e7f-88e2-40435d70442f",
+                    "remote_addr": "windows.automation.here",
+                    "resolved_action": "ansible.windows.win_service",
+                    "start": "2024-02-07T15:40:50.526476",
+                    "task": "Para o serviço {{ servico }}",
+                    "task_action": "ansible.windows.win_service",
+                    "task_args": "",
+                    "task_path": "/root/automação_windows/playbook_service.yml:25",
+                    "task_uuid": "d699a405-e843-928c-8c73-000000000007",
+                    "uuid": "b1be220d-0f05-4c15-9955-a160ac5011f8"
+                }
+            ],
+            "uuid": "d699a405-e843-928c-8c73-000000000002"
+        }
+    ],
+    "settings_entries": {
+        "ansible-navigator": {
+            "ansible": {
+                "cmdline": "-e instrucao=Inicia -e servico=UALSVC",
+                "config": {
+                    "help": false
+                },
+                "doc": {
+                    "help": false,
+                    "plugin": {
+                        "type": "module"
+                    }
+                },
+                "inventory": {
+                    "entries": [
+                        "/root/automação_windows/inventory"
+                    ],
+                    "help": false
+                },
+                "playbook": {
+                    "help": false,
+                    "path": "/root/automação_windows/playbook_service.yml"
+                }
+            },
+            "ansible-builder": {
+                "help": false,
+                "workdir": "/root/automação_windows"
+            },
+            "ansible-runner": {
+                "job-events": false
+            },
+            "app": "run",
+            "collection-doc-cache-path": "/root/.cache/ansible-navigator/collection_doc_cache.db",
+            "color": {
+                "enable": true,
+                "osc4": true
+            },
+            "editor": {
+                "command": "vi +{line_number} {filename}",
+                "console": true
+            },
+            "enable-prompts": false,
+            "exec": {
+                "command": "/bin/bash",
+                "shell": true
+            },
+            "execution-environment": {
+                "container-engine": "podman",
+                "enabled": true,
+                "image": "ee-supported-rhel8:latest",
+                "pull": {
+                    "policy": "missing"
+                }
+            },
+            "format": "yaml",
+            "images": {
+                "details": [
+                    "everything"
+                ]
+            },
+            "logging": {
+                "append": true,
+                "file": "/root/automação_windows/ansible-navigator.log",
+                "level": "warning"
+            },
+            "mode": "stdout",
+            "playbook-artifact": {
+                "enable": true,
+                "save-as": "{playbook_dir}/{playbook_name}-artifact-{time_stamp}.json"
+            },
+            "settings": {
+                "effective": false,
+                "sample": false,
+                "schema": "json",
+                "sources": false
+            },
+            "time-zone": "UTC"
+        }
+    },
+    "settings_sources": {
+        "ansible-navigator.ansible-builder.help": "Defaults",
+        "ansible-navigator.ansible-builder.workdir": "Defaults",
+        "ansible-navigator.ansible-lint.config": "Not set",
+        "ansible-navigator.ansible-lint.lintables": "Not set",
+        "ansible-navigator.ansible-runner.artifact-dir": "Not set",
+        "ansible-navigator.ansible-runner.job-events": "Defaults",
+        "ansible-navigator.ansible-runner.rotate-artifacts-count": "Not set",
+        "ansible-navigator.ansible-runner.timeout": "Not set",
+        "ansible-navigator.ansible.cmdline": "Command line",
+        "ansible-navigator.ansible.config.help": "Defaults",
+        "ansible-navigator.ansible.config.path": "Not set",
+        "ansible-navigator.ansible.doc.help": "Defaults",
+        "ansible-navigator.ansible.doc.plugin.name": "Not set",
+        "ansible-navigator.ansible.doc.plugin.type": "Defaults",
+        "ansible-navigator.ansible.inventory.entries": "Command line",
+        "ansible-navigator.ansible.inventory.help": "Defaults",
+        "ansible-navigator.ansible.playbook.help": "Defaults",
+        "ansible-navigator.ansible.playbook.path": "Command line",
+        "ansible-navigator.app": "Command line",
+        "ansible-navigator.collection-doc-cache-path": "Defaults",
+        "ansible-navigator.color.enable": "Defaults",
+        "ansible-navigator.color.osc4": "Defaults",
+        "ansible-navigator.editor.command": "Defaults",
+        "ansible-navigator.editor.console": "Defaults",
+        "ansible-navigator.enable-prompts": "Defaults",
+        "ansible-navigator.exec.command": "Defaults",
+        "ansible-navigator.exec.shell": "Defaults",
+        "ansible-navigator.execution-environment.container-engine": "Automatically determined",
+        "ansible-navigator.execution-environment.container-options": "Not set",
+        "ansible-navigator.execution-environment.enabled": "Defaults",
+        "ansible-navigator.execution-environment.environment-variables.pass": "Not set",
+        "ansible-navigator.execution-environment.environment-variables.set": "Not set",
+        "ansible-navigator.execution-environment.image": "Command line",
+        "ansible-navigator.execution-environment.pull.arguments": "Not set",
+        "ansible-navigator.execution-environment.pull.policy": "Command line",
+        "ansible-navigator.execution-environment.volume-mounts": "Not set",
+        "ansible-navigator.format": "Defaults",
+        "ansible-navigator.images.details": "Defaults",
+        "ansible-navigator.inventory-columns": "Not set",
+        "ansible-navigator.logging.append": "Defaults",
+        "ansible-navigator.logging.file": "Defaults",
+        "ansible-navigator.logging.level": "Defaults",
+        "ansible-navigator.mode": "Command line",
+        "ansible-navigator.playbook-artifact.enable": "Defaults",
+        "ansible-navigator.playbook-artifact.replay": "Not set",
+        "ansible-navigator.playbook-artifact.save-as": "Defaults",
+        "ansible-navigator.settings.effective": "Defaults",
+        "ansible-navigator.settings.sample": "Defaults",
+        "ansible-navigator.settings.schema": "Defaults",
+        "ansible-navigator.settings.sources": "Defaults",
+        "ansible-navigator.time-zone": "Defaults",
+        "settings_file_path": "None",
+        "settings_file_source": "None"
+    },
+    "status": "successful",
+    "status_color": 10,
+    "stdout": [
+        "",
+        "PLAY [Play de serviços de windows] *********************************************",
+        "",
+        "TASK [Pega o status do serviço UALSVC] *****************************************",
+        "\u001b[0;32mok: [windows.automation.here]\u001b[0m",
+        "",
+        "TASK [Mostra o status do serviço UALSVC] ***************************************",
+        "\u001b[0;32mok: [windows.automation.here] => {\u001b[0m",
+        "\u001b[0;32m    \"msg\": \"O Status do serviço é: started\"\u001b[0m",
+        "\u001b[0;32m}\u001b[0m",
+        "",
+        "TASK [Inicia o serviço UALSVC] *************************************************",
+        "\u001b[0;32mok: [windows.automation.here]\u001b[0m",
+        "",
+        "TASK [Para o serviço UALSVC] ***************************************************",
+        "\u001b[0;36mskipping: [windows.automation.here]\u001b[0m",
+        "",
+        "PLAY RECAP *********************************************************************",
+        "\u001b[0;32mwindows.automation.here\u001b[0m    : \u001b[0;32mok=3   \u001b[0m changed=0    unreachable=0    failed=0    \u001b[0;36mskipped=1   \u001b[0m rescued=0    ignored=0   "
+    ],
+    "version": "2.0.0"
+}
