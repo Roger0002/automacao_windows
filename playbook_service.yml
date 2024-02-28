@@ -1,6 +1,6 @@
 ---
 - name: Play de serviços de windows
-  hosts: windows.automation.here
+  hosts: clientewin2022.s2linux.local
   gather_facts: False
   vars:
     instrucao: "Inicia"
