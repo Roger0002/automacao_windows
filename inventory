@@ -1,5 +1,5 @@
 [hosts_windows]
-windows.automation.here
+clientewin2022.automation.here
 
 [hosts_windows:vars]
 ansible_user=Administrator
