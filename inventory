@@ -1,9 +1,9 @@
 [hosts_windows]
-clientewin2022.automation.here
+clientewin2022.s2linux.local
 
 [hosts_windows:vars]
 ansible_user=Administrator
-ansible_password='Manchester3333'
+ansible_password='Kanchester1234'
 ansible_connection=winrm
 ansible_port=5985
 ansible_winrm_transport=credssp
